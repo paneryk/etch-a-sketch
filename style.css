@@ -1,0 +1,29 @@
+body {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+#board {
+    width: 480px;
+    height: 480px;
+    flex: 0 0 auto;
+    background-color: khaki;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0;
+    padding: 0;
+}
+
+.square {
+border-color: rgb(250, 170, 170);
+border-style: solid;
+box-sizing: border-box;
+border-width: 1px;
+padding: 0;
+margin: 0;
+flex: 0 0 auto;
+}
