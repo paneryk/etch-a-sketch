@@ -11,5 +11,16 @@ function createSquares(squareSize) { //creates .square divs of squareSize width 
 };
 }
 
+createSquares(16); //creates squares of 16px size
+
+const squaresAll = document.querySelectorAll('div.square');
+squaresAll.forEach((square) => {
+    square.addEventListener('mouseover', (e) => {
+        if (e.buttons == 1) {
+        square.classList.add('hover');
+        }
+    })
+})
+
 
 
