@@ -1,17 +1,30 @@
 body {
     margin: 0 auto;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     width: 100vw;
     height: 100vh;
+    flex-direction: column;
+}
+
+.controls {
+    width: 480px;
+    height: 50px;
+    flex: 0 0 auto;
+    background-color: aquamarine; /*to be deleted*/
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #board {
     width: 480px;
     height: 480px;
     flex: 0 0 auto;
-    background-color: khaki;
+    background-color:#f5f0ff;
     display: flex;
     flex-flow: row wrap;
     margin: 0;
@@ -19,13 +32,13 @@ body {
 }
 
 .square {
-border-color: rgb(250, 170, 170);
-border-style: solid;
-box-sizing: border-box;
-border-width: 1px;
-padding: 0;
-margin: 0;
-flex: 0 0 auto;
+    border-color:#d7d3e1;
+    border-style: solid;
+    box-sizing: border-box;
+    border-width: 1px;
+    padding: 0;
+    margin: 0;
+    flex: 0 0 auto;
 }
 
 .square.hover {
