@@ -12,12 +12,19 @@ function createSquares(squareSize) { //creates .square divs of squareSize width 
 };
 }
 
-function listening() {
+function listening(color) {
     const squaresAll = document.querySelectorAll('div.square');
     squaresAll.forEach((square) => {
         square.addEventListener('mouseover', (e) => {
             if (e.buttons == 1 || e.buttons == 3) {
-            square.classList.add('hover');
+                switch(color) {
+                    case 'rainbow':
+                        let rainbowColor = "#" + ((1<<24)*Math.random() | 0).toString(16);
+                        e.target.style.backgroundColor = rainbowColor;
+                    default:
+                        e.target.style.backgroundColor = color; 
+                }
+
             }
         });
     });
@@ -26,8 +33,9 @@ function listening() {
 function resetBoard() {
     const squaresAll = document.querySelectorAll('div.square');
     squaresAll.forEach((square) => {
-        square.classList.remove('hover');
+        square.style.backgroundColor = 'transparent';
     })
+    listening('black');
 };
 
 const selectSizeButton = document.querySelector('#selectSizeButton');
@@ -38,14 +46,17 @@ selectSizeButton.addEventListener(('click'), () => {
         square.remove();
     });
     createSquares(squareSize);
-    listening();
+    listening('black');
 });
 
 const resetButton = document.querySelector('#resetButton');
 resetButton.addEventListener(('click'), resetBoard);
 
+const rainbowButton = document.querySelector('#rainbowButton');
+rainbowButton.addEventListener(('click'), () => listening('rainbow'));
+
 createSquares(30);
-listening();
+listening('black');
 
 
 
