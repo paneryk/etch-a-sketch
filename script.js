@@ -55,8 +55,8 @@ function resetBoard() {
 }
 
 function selectSize() {
-    let squareSize = prompt(`Enter the number of squares per side of a grid (max. 100)`, "50");
-    if (squareSize > 100) alert('Maximum number is 100, try again');
+    let squareSize = prompt(`Enter the number of squares per side of a grid (max. 40)`, "25");
+    if (squareSize > 40) alert('Maximum number is 40, try again');
     else {
     const squaresAll = document.querySelectorAll('div.square');
     squaresAll.forEach((square) => {
